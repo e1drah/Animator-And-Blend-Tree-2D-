@@ -37,8 +37,9 @@ public class Interaction : MonoBehaviour
 
     public void Info()
     {
-        infoText.text = infoMessage;
-        ShowInfo(infoMessage, 3.0f);
+        //infoText.text = infoMessage;
+        Debug.Log("1");
+        StartCoroutine(ShowInfo(infoMessage, 3.0f));
     }
 
     public void Dialogue()
@@ -48,6 +49,7 @@ public class Interaction : MonoBehaviour
 
     public IEnumerator ShowInfo(string message, float delay)
     {
+        Debug.Log("2");
         infoText.text = message;
         yield return new WaitForSeconds(delay);
         infoText.text = null;
